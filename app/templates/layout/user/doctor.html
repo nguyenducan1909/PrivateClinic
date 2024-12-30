@@ -1,0 +1,68 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href='/create_medical_visit'>
+                            Lập phiếu khám
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search_medicine">
+                            Tra cứu thuốc
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Xem lịch sử bệnh nhân
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-10 ms-sm-auto px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Bảng điều khiển Bác sĩ</h1>
+            </div>
+
+            {% block doctor_content %}
+            <!-- Nội dung mặc định -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên bệnh nhân</th>
+                            <th>Ngày khám</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for appointment in appointments %}
+                        <tr>
+                            <td>{{ appointment.id }}</td>
+                            <td>{{ appointment.patient.name }}</td>
+                            <td>{{ appointment.date }}</td>
+                            <td>{{ appointment.status }}</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">Xem</button>
+                                <button class="btn btn-success btn-sm">Khám</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endblock %}
+        </main>
+    </div>
+</div>
+{% endblock %}

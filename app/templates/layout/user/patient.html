@@ -1,0 +1,50 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3>Đăng ký khám bệnh</h3>
+            </div>
+            <div class="card-body">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="alert alert-dismissible">
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} mt-2">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                <form method="POST" action="{{ url_for('register_appointment_off') }}">
+                    <div class="mb-3">
+                        <label for="appointment_date" class="form-label">Ngày khám</label>
+                        <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+                    </div>
+
+                     <div class="mb-3">
+                            <label for="username" class="form-label">Tên đăng nhập</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="doctor" class="form-label">Bác sĩ</label>
+                        <select class="form-control" id="doctor" name="doctor" required>
+                            <option value="">Chọn bác sĩ</option>
+                            {% for doctor in doctors %}
+                            <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Đăng ký khám</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

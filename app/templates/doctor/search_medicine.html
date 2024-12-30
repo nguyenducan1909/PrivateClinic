@@ -1,0 +1,38 @@
+{% extends "layout/user/doctor.html" %}
+
+{% block title %}Create Medical Record{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Tra Cứu Thuốc</h1>
+        <form action="/search_medicine" method="POST" >
+            <div class="form-group">
+                <input type="text" class="form-control" name="search_query" placeholder="Nhập tên thuốc..." value="{{ search_query }}">
+            </div>
+          <br>
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        </form>
+
+        {% if medicines %}
+            <h2 class="mt-4">Kết quả tìm kiếm</h2>
+            <ul class="list-group mt-3">
+            {% for medicine in medicines %}
+                <li class="list-group-item">
+                    <h5>{{ medicine.name }}</h5>
+                    <p>Số lượng: {{ medicine.quantity }}</p>
+                    <p>Giá: {{ medicine.price }}</p>
+                </li>
+              <br>
+            {% endfor %}
+            </ul>
+        {% elif message %}
+            <div class="alert alert-warning mt-4">{{ message }}</div>
+        {% endif %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

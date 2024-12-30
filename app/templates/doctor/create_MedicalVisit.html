@@ -1,0 +1,90 @@
+{% extends "layout/user/doctor.html" %}
+
+{% block title %}Create Medical Record{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-bottom:20px">
+        <h1 class="mt-5">Lập Phiếu Khám</h1>
+        <form action="/create_medical_visit" method="POST">
+            <div class="form-group">
+                <label for="appointment_id">Mã cuộc hẹn:</label>
+                <input type="text" class="form-control" id="appointment_id" name="appointment_id" required>
+            </div>
+            <div class="form-group">
+                <label for="patient_id">Mã bệnh nhân:</label>
+                <input type="text" class="form-control" id="patient_id" name="patient_id" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Ngày khám:</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="symptoms">Triệu chứng:</label>
+                <input class="form-control" id="symptoms" name="symptoms" rows="3" required>
+            </div>
+            <div class="form-group">
+                <label for="diagnosis">Chuẩn đoán:</label>
+                <input class="form-control" id="diagnosis" name="diagnosis" rows="3" required>
+            </div>
+
+            <h3>Thuốc</h3>
+            <div id="medicines">
+                <div class="medicine form-row align-items-center">
+                    <div class="col-auto">
+                        <label for="medicine" class="sr-only">Tên thuốc:</label>
+                        <input type="text" class="form-control mb-2" name="medicines[]" placeholder="Tên thuốc" required>
+                    </div>
+                    <div class="col-auto">
+                        <label for="quantity" class="sr-only">Số lượng:</label>
+                        <input type="number" class="form-control mb-2" name="quantities[]" placeholder="Số lượng" required>
+                    </div>
+                    <div class="col-auto">
+                        <label for="usage" class="sr-only">Cách dùng:</label>
+                        <input type="text" class="form-control mb-2" name="usages[]" placeholder="Cách dùng" required>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-danger mb-2" onclick="removeMedicine(this)">Xóa</button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="addMedicine()">Thêm thuốc</button>
+            <button type="submit" class="btn btn-success ">Lưu phiếu khám</button>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function addMedicine() {
+            const medicinesDiv = document.getElementById('medicines');
+            const newMedicineDiv = document.createElement('div');
+            newMedicineDiv.classList.add('medicine', 'form-row', 'align-items-center');
+            newMedicineDiv.innerHTML = `
+                <div class="col-auto">
+                    <label for="medicine" class="sr-only">Tên thuốc:</label>
+                    <input type="text" class="form-control mb-2" name="medicines[]" placeholder="Tên thuốc" required>
+                </div>
+                <div class="col-auto">
+                    <label for="quantity" class="sr-only">Số lượng:</label>
+                    <input type="number" class="form-control mb-2" name="quantities[]" placeholder="Số lượng" required>
+                </div>
+                <div class="col-auto">
+                    <label for="usage" class="sr-only">Cách dùng:</label>
+                    <input type="text" class="form-control mb-2" name="usages[]" placeholder="Cách dùng" required>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-danger mb-2" onclick="removeMedicine(this)">Xóa</button>
+                </div>
+            `;
+            medicinesDiv.appendChild(newMedicineDiv);
+        }
+
+        function removeMedicine(button) {
+            button.parentElement.parentElement.remove();
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,46 @@
+<header id="header" class="header sticky-top">
+    <div class="branding d-flex align-items-center">
+        <div class="position-relative d-flex align-items-center justify-content-between">
+            <a href="#" class="logo d-flex align-items-center me-auto">
+                <img class="icon" src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo">
+                <h1 class="sitename">Private Clinic Management</h1>
+            </a>
+
+            {% if session.get('role') not in ['STAFF', 'DOCTOR'] %}
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Trang Chủ<br></a></li>
+                    <li><a href="#about">Về chúng tôi</a></li>
+                    <li class="dropdown"><a href="#services"><span>Dịch vụ</span></a></li>
+                    <li class="dropdown">
+                        <a href="#departments">
+                            <span>Chuyên khoa</span>
+                            <i class="ri-arrow-down-s-line"></i>
+                        </a>
+                        <ul>
+                            <li><a href="#">Tim Mạch</a></li>
+                            <li><a href="#">Thần Kinh</a></li>
+                            <li><a href="#">Gan Mật</a></li>
+                            <li><a href="#">Nhi Khoa</a></li>
+                            <li><a href="#">Chăm sóc mắt</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#doctors"><span>Bác sĩ</span></a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <a class="cta-btn d-none d-sm-block" href="javascript:void(0);" onclick="checkLogin()">Đặt lịch hẹn</a>
+            {% endif %}
+
+
+            {% if session.get('user_id') %}
+            <a href="{{ url_for('logout') }}">Đăng xuất</a>
+            {% else %}
+            <a class="cta-btn d-none d-sm-block" href="{{ url_for('login') }}">Đăng nhập</a>
+            {% endif %}
+
+        </div>
+    </div>
+</header>

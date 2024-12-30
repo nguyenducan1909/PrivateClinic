@@ -1,0 +1,117 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+<section class="container">
+    <h1 class="text-center text-success">Thống kê doanh thu</h1>
+
+    <div class="row">
+        <div class="col-md-5">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Ngày</th>
+                    <th>Số bệnh nhân</th>
+                    <th>Doanh thu</th>
+                    <th>Tỷ lệ</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if stats %}
+                {% for s in stats.daily_stats %}
+                <tr>
+                    <td>{{ loop.index }}</td> <!-- STT -->
+                    <td>{{ s['date'] }}</td> <!-- Ngày -->
+                    <td>{{ s['patient_count'] }}</td> <!-- Số bệnh nhân -->
+                    <td>
+                        {% if s['daily_revenue'] %}
+                        {{ "{:,.0f}".format(s['daily_revenue']) }} VNĐ
+                        {% else %}
+                        0 VNĐ
+                        {% endif %}
+                    </td> <!-- Doanh thu -->
+                    <td>
+                        {% if s['percentage'] %}
+                        {{ "{:.2f}".format(s['percentage']) }}%
+                        {% else %}
+                        0%
+                        {% endif %}
+                    </td> <!-- Tỷ lệ -->
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center">Không có dữ liệu!</td>
+                </tr>
+                {% endif %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Tổng doanh thu:</strong></td>
+                    <td colspan="2">
+                        <strong>
+                            {{ "{:,.0f}".format(stats.total_revenue) }} VNĐ
+                        </strong>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="col-md-7">
+            <form>
+                <div class="form-group">
+                    <input type="month" class="form-control" name="month">
+                </div>
+                <input type="submit" value="Thống kê" class="btn btn-success m-2">
+            </form>
+            <canvas id="myProductChart"></canvas>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    let labels = [], info = [];
+    let colors = [], borderColors = [];
+    let r, g, b;
+
+    // Thêm dữ liệu từ stats vào labels và info
+    {% for s in stats.daily_stats %}
+        labels.push('{{ s["date"] }}'); // Ngày
+        info.push({{ s["daily_revenue"] }}); // Doanh thu
+
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
+
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
+        borderColors.push(`rgba(${r}, ${g}, ${b}, 1)`);
+    {% endfor %}
+
+    const ctx = document.getElementById('myProductChart');
+    loadChart(ctx, labels, info, 'bar', colors, borderColors);
+
+    function loadChart(ctx, labels, info, type, colors, borderColors) {
+        new Chart(ctx, {
+            type: type,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Thống kê doanh thu',
+                    data: info,
+                    borderWidth: 1,
+                    borderColor: borderColors,
+                    backgroundColor: colors
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}

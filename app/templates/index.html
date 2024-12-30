@@ -1,0 +1,885 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Trang Chủ{% endblock %}
+
+{% block content %}
+
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+        <img src="{{ url_for('static', filename='img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
+
+        <div class="container position-relative">
+
+            <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+                <h2>CHÀO MỪNG ĐẾN VỚI </h2>
+                <h2>QHA MEDILAB</h2>
+                <p>Chất lượng Chăm sóc theo Tiêu chuẩn Quốc tế</p>
+            </div><!-- End Welcome -->
+
+            <div class="content row gy-4">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+                        <h3>Tại sao chọn QHA Medilab?</h3>
+                        <p>
+                            Việc chăm sóc bệnh nhân là rất quan trọng, bởi lẽ sức khỏe của họ luôn cần được theo dõi một
+                            cách tận
+                            tâm. Tuy nhiên, đôi khi công việc và những khó khăn có thể gây ra áp lực lớn. Chúng tôi hiểu
+                            rằng việc
+                            xử lý những vấn đề này cần đến sự chuyên nghiệp và tận tâm để mang lại sự thoải mái và an
+                            tâm cho bệnh
+                            nhân. Với QHA Medilab, chúng tôi không chỉ tập trung vào việc giảm thiểu những nỗi đau mà
+                            còn đặt sức
+                            khỏe và nhu cầu của bệnh nhân lên hàng đầu
+                        </p>
+                        <div class="text-center">
+                            <a href="#about" class="more-btn"><span>Xem thêm</span> <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Why Box -->
+
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div class="d-flex flex-column justify-content-center">
+                        <div class="row gy-4">
+
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                                    <i class="bi bi-clipboard-data"></i>
+                                    <h4>Theo Dõi và Tư Vấn Định Kỳ</h4>
+                                    <p>
+                                        Đội ngũ y tế của chúng tôi sẽ thường xuyên theo dõi và cập nhật tình trạng sức
+                                        khỏe của bạn qua hồ
+                                        sơ y tế. Chúng tôi cũng sẽ cung cấp các lời khuyên và dịch vụ chăm sóc phù hợp
+                                        để giúp bạn duy trì
+                                        sức khỏe tốt nhất
+                                    </p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                                    <i class="bi bi-gem"></i>
+                                    <h4>Cơ sở vật chất hiện đại</h4>
+                                    <p>
+                                        Trang thiết bị tiên tiến, cùng môi trường sạch sẽ, an toàn, giúp chúng tôi đáp
+                                        ứng được các tiêu
+                                        chuẩn y tế khắt khe nhất
+                                    </p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                                    <i class="bi bi-inboxes"></i>
+                                    <h4>Dịch Vụ Toàn Diện</h4>
+                                    <p>
+                                        Chúng tôi cung cấp các dịch vụ từ thăm khám tổng quát, chẩn đoán chính xác đến
+                                        điều trị chuyên
+                                        sâu, giúp bạn được chăm sóc sức khỏe toàn diện ở một nơi duy nhất
+                                    </p>
+                                </div>
+                            </div><!-- End Icon Box -->
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End  Content-->
+
+        </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <div class="container">
+
+            <div class="row gy-4 gx-5">
+
+                <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+                    <img src="/static/img/about.jpg" class="img-fluid" alt="">
+                    <a href="#" class="glightbox pulsating-play-btn"></a>
+                </div>
+
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>
+                        Là điểm đến thăm khám và chăm sóc sức khỏe chất lượng quốc tế tại Việt Nam, Bệnh viện QHA
+                        Medilab mang
+                        đến các phương pháp điều trị tiên tiến được xây dựng theo tiêu chuẩn của Hội đồng Úc về tiêu
+                        chuẩn chăm
+                        sóc sức khỏe (ACHSI), đáp ứng nhu cầu ngày càng tăng về dịch vụ y tế cao cấp tại Việt Nam.
+                    </p>
+                    <ul>
+                        <li>
+                            <div>
+                                <h5>Tầm nhìn & Sứ mệnh</h5>
+                                <p>Tại Hạnh Phúc, chúng tôi hướng tới mục tiêu trở thành đơn vị tiên phong trong lĩnh
+                                    vực chăm sóc sức
+                                    khoẻ đa chuyên khoa cao cấp và trải nghiệm toàn diện.</p>
+                                <p>Sứ mệnh của chúng tôi là định hình văn hóa chăm sóc sức khỏe đa chuyên khoa cao cấp
+                                    tại Việt Nam
+                                    thông qua mạng lưới bệnh viện và phòng khám đạt tiêu chuẩn quốc tế.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="stats section light-background">
+                    <div class="container" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row gy-4">
+
+                            <h5 class="text-center">Giá trị cốt lõi</h5>
+                            <p class="mt-4 text-center">Vì mục tiêu nâng cao sức khỏe và hạnh phúc của tất cả người dân
+                                Việt Nam.
+                                Tận tâm chăm sóc.</p>
+
+                            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                                <div class="stats-item">
+                                    <h6>Commitment:</h6>
+                                    <p>Cam kết</p>
+                                </div>
+                            </div><!-- End Stats Item -->
+
+                            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                                <div class="stats-item">
+                                    <h6>Accountability:</h6>
+                                    <p>Trách nhiệm</p>
+                                </div>
+                            </div><!-- End Stats Item -->
+
+                            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                                <div class="stats-item">
+                                    <h6>Respect:</h6>
+                                    <p>Tôn trọng</p>
+                                </div>
+                            </div><!-- End Stats Item -->
+
+                            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                                <div class="stats-item">
+                                    <h6>Empathy:</h6>
+                                    <p>Đồng cảm</p>
+                                </div>
+                            </div><!-- End Stats Item -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Dịch Vụ Y Tế</h2>
+            <p>Chúng tôi cam kết cung cấp dịch vụ y tế chất lượng cao, đáp ứng nhu cầu của bệnh nhân một cách nhanh
+                chóng và
+                hiệu quả.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>Khám Chuyên Khoa</h3>
+                        </a>
+                        <p>Đội ngũ bác sĩ chuyên khoa của chúng tôi sẵn sàng chẩn đoán và điều trị các bệnh lý phức tạp,
+                            đảm bảo
+                            sức khỏe tối ưu cho bệnh nhân.</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>Đặt Thuốc và Điều Trị</h3>
+                        </a>
+                        <p>Chúng tôi cung cấp dịch vụ kê đơn và phân phối thuốc một cách tiện lợi và nhanh chóng, đảm
+                            bảo người
+                            bệnh được điều trị kịp thời.</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fas fa-hospital-user"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>Chăm Sóc Bệnh Nhân</h3>
+                        </a>
+                        <p>Đội ngũ y tá chuyên nghiệp của chúng tôi luôn sẵn sàng hỗ trợ và chăm sóc bệnh nhân, đảm bảo
+                            sự thoải
+                            mái và an toàn trong quá trình điều trị.</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>Xét Nghiệm và Chẩn Đoán</h3>
+                        </a>
+                        <p>Các dịch vụ xét nghiệm hiện đại của chúng tôi giúp chẩn đoán nhanh chóng và chính xác, hỗ trợ
+                            bác sĩ
+                            trong việc đưa ra phác đồ điều trị hiệu quả.</p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>Hỗ Trợ Khuyết Tật</h3>
+                        </a>
+                        <p>Chúng tôi cung cấp dịch vụ chăm sóc đặc biệt cho bệnh nhân khuyết tật, đảm bảo họ nhận được
+                            sự hỗ trợ
+                            cần thiết trong việc điều trị và phục hồi.</p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fas fa-notes-medical"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>Tư Vấn Y Tế</h3>
+                        </a>
+                        <p>Chúng tôi cung cấp dịch vụ tư vấn y tế miễn phí, giúp bệnh nhân và gia đình hiểu rõ về tình
+                            trạng sức
+                            khỏe và các phương pháp điều trị.</p>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div><!-- End Service Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                        <p>Bác sĩ</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="fa-regular fa-hospital"></i>
+                    <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                        <p>Cơ sở</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="fas fa-flask"></i>
+                    <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                        <p>Phòng nghiên cứu</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="fas fa-award"></i>
+                    <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                        <p>Giải thưởng</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Departments Section -->
+    <section id="departments" class="departments section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Chuyên Khoa</h2>
+            <p>Các khoa của chúng tôi cung cấp dịch vụ y tế chất lượng cao với đội ngũ bác sĩ chuyên nghiệp.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav nav-tabs flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Tim Mạch</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">Thần Kinh</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Gan Mật</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Nhi Khoa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5">Chăm Sóc Mắt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 mt-4 mt-lg-0">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="departments-tab-1">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Khoa Tim Mạch</h3>
+                                    <p class="fst-italic">Chuyên chăm sóc sức khỏe tim mạch.</p>
+                                    <p>Khoa Tim Mạch cung cấp các dịch vụ khám, chẩn đoán và điều trị bệnh lý tim mạch,
+                                        với đội ngũ bác
+                                        sĩ giàu kinh nghiệm và thiết bị y tế hiện đại.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="/static/img/departments-1.jpg" alt="Khoa Tim Mạch" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="departments-tab-2">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Khoa Thần Kinh</h3>
+                                    <p class="fst-italic">Chuyên điều trị các bệnh lý về thần kinh.</p>
+                                    <p>Khoa Thần Kinh cung cấp dịch vụ khám và điều trị cho các rối loạn như đột quỵ,
+                                        bệnh Parkinson và
+                                        các vấn đề thần kinh khác.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="/static/img/departments-2.jpg" alt="Khoa Thần Kinh" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="departments-tab-3">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Khoa Gan Mật</h3>
+                                    <p class="fst-italic">Chăm sóc sức khỏe gan và mật.</p>
+                                    <p>Khoa Gan Mật chuyên điều trị các bệnh liên quan đến gan, mật và tụy, với các
+                                        phương pháp điều trị
+                                        tiên tiến.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="/static/img/departments-3.jpg" alt="Khoa Gan Mật" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="departments-tab-4">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Khoa Nhi Khoa</h3>
+                                    <p class="fst-italic">Chăm sóc sức khỏe trẻ em.</p>
+                                    <p>Khoa Nhi Khoa cung cấp dịch vụ khám và điều trị cho trẻ em từ sơ sinh đến vị
+                                        thành niên, đảm bảo
+                                        sự phát triển và sức khỏe của trẻ.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="/static/img/departments-4.jpg" alt="Khoa Nhi Khoa" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="departments-tab-5">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Khoa Chăm Sóc Mắt</h3>
+                                    <p class="fst-italic">Khám và điều trị các vấn đề về mắt.</p>
+                                    <p>Khoa Chăm Sóc Mắt cung cấp các dịch vụ khám và điều trị các bệnh lý về mắt, bao
+                                        gồm đục thủy tinh
+                                        thể và các tật khúc xạ.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="/static/img/departments-5.jpg" alt="Khoa Chăm Sóc Mắt" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Departments Section -->
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="doctors section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Bác Sĩ</h2>
+            <p>Đội ngũ bác sĩ của chúng tôi là những chuyên gia hàng đầu, sẵn sàng chăm sóc sức khỏe của bạn.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="/static/img/doctors/doctors-1.jpg" class="img-fluid"
+                                              alt="Bác sĩ Walter White">
+                        </div>
+                        <div class="member-info">
+                            <h4>Nguyễn Trung Quân</h4>
+                            <span>Giám đốc Y khoa</span>
+                            <p>Chuyên gia trong việc quản lý và điều phối các dịch vụ y tế tại bệnh viện.</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="/static/img/doctors/doctors-2.jpg" class="img-fluid"
+                                              alt="Bác sĩ Sarah Jhonson">
+                        </div>
+                        <div class="member-info">
+                            <h4>Nguyễn Đức An</h4>
+                            <span>Bác sĩ Tâm Thần</span>
+                            <p>Chuyên gia trong lĩnh vực thần kinh, chuyên chẩn đoán và điều trị các bệnh lý về thần
+                                kinh, đảm bảo
+                                sức khỏe và chất lượng cuộc sống cho bệnh nhân.</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="/static/img/doctors/doctors-3.jpg" class="img-fluid"
+                                              alt="Bác sĩ William Anderson"></div>
+                        <div class="member-info">
+                            <h4>Nguyễn Thanh Hoàng</h4>
+                            <span>Bác sĩ Tim Mạch</span>
+                            <p>Chuyên khám và điều trị các bệnh lý về tim mạch, với nhiều năm kinh nghiệm trong
+                                ngành.</p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member d-flex align-items-start">
+                        <div class="pic"><img src="/static/img/doctors/doctors-4.jpg" class="img-fluid"
+                                              alt="Bác sĩ Amanda Jepson">
+                        </div>
+                        <div class="member-info">
+                            <h4>Mã Biển Đèn</h4>
+                            <span>Phẫu thuật thần kinh</span>
+                            <p>Cung cấp các dịch vụ phẫu thuật thần kinh với công nghệ tiên tiến và phương pháp điều trị
+                                hiệu quả.
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+            </div>
+
+
+        </div>
+
+    </section><!-- /Doctors Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Câu Hỏi Thường Gặp</h2>
+            <p>Chúng tôi đã tổng hợp những câu hỏi phổ biến từ bệnh nhân và câu trả lời từ đội ngũ chuyên gia của chúng
+                tôi.
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="faq-container">
+
+                        <div class="faq-item faq-active">
+                            <h3>Thời gian khám bệnh là bao lâu?</h3>
+                            <div class="faq-content">
+                                <p>Thời gian khám bệnh tùy thuộc vào từng chuyên khoa và tình trạng của bệnh nhân,
+                                    thường dao động từ
+                                    30 phút đến 1 giờ.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3>Có cần đặt lịch hẹn trước không?</h3>
+                            <div class="faq-content">
+                                <p>Chúng tôi khuyến khích bệnh nhân đặt lịch hẹn trước để đảm bảo thời gian khám chữa
+                                    bệnh và tránh
+                                    phải chờ đợi.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3>Các phương thức thanh toán nào được chấp nhận?</h3>
+                            <div class="faq-content">
+                                <p>Chúng tôi chấp nhận phương thức thanh toán như tiền mặt.</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+
+                        <div class="faq-item">
+                            <h3>Quy định đặt lịch hẹn như thế nào?</h3>
+                            <div class="faq-content">
+                                <p>Đối với đăng ký online sẽ là 2 ngày trước khi khám bệnh và sẽ được thông báo thành
+                                    công ngay khi
+                                    đặt. Đối với offline đăng ký tại quầy với nhân viên trước 1 ngày</p>
+                            </div>
+                            <i class="faq-toggle bi bi-chevron-right"></i>
+                        </div><!-- End Faq item-->
+                    </div>
+
+                </div><!-- End Faq Column-->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Đánh Giá Của Khách Hàng</h3>
+                    <p>
+                        Chúng tôi tự hào nhận được những phản hồi tích cực từ khách hàng. Dưới đây là một số ý kiến từ
+                        những người
+                        đã trải nghiệm dịch vụ của chúng tôi.
+                    </p>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="swiper init-swiper">
+                        <script type="application/json" class="swiper-config">
+                            {
+                                "loop": true,
+                                "speed": 600,
+                                "autoplay": {
+                                    "delay": 5000
+                                },
+                                "slidesPerView": "auto",
+                                "pagination": {
+                                    "el": ".swiper-pagination",
+                                    "type": "bullets",
+                                    "clickable": true
+                                }
+                            }
+                        </script>
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="d-flex">
+                                        <img src="/static/img/testimonials/testimonials-1.jpg"
+                                             class="testimonial-img flex-shrink-0"
+                                             alt="">
+                                        <div>
+                                            <h3>Nguyễn Văn Văn</h3>
+                                            <h4>Giám Đốc &amp; Nhà Sáng Lập</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        <span>Chúng tôi đã trải nghiệm dịch vụ tuyệt vời và nhân viên rất chu đáo. Tôi sẽ giới thiệu cho
+                        bạn bè của mình.</span>
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="d-flex">
+                                        <img src="/static/img/testimonials/testimonials-2.jpg"
+                                             class="testimonial-img flex-shrink-0"
+                                             alt="">
+                                        <div>
+                                            <h3>Biển Đèn Mã</h3>
+                                            <h4>Nhà Thiết Kế</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        <span>Dịch vụ chuyên nghiệp, tôi rất hài lòng với trải nghiệm của mình. Sẽ quay lại trong tương
+                        lai.</span>
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="d-flex">
+                                        <img src="/static/img/testimonials/testimonials-3.jpg"
+                                             class="testimonial-img flex-shrink-0"
+                                             alt="">
+                                        <div>
+                                            <h3>Mã Hải Đắt</h3>
+                                            <h4>Chủ Cửa Hàng</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        <span>Tôi đã nhận được sự chăm sóc tuyệt vời từ đội ngũ bác sĩ và nhân viên. Cảm ơn vì mọi
+                        thứ!</span>
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="d-flex">
+                                        <img src="/static/img/testimonials/testimonials-4.jpg"
+                                             class="testimonial-img flex-shrink-0"
+                                             alt="">
+                                        <div>
+                                            <h3>Nguyễn Thanh Quàng</h3>
+                                            <h4>Freelancer</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        <span>Tôi rất hài lòng với chất lượng dịch vụ. Đội ngũ làm việc chuyên nghiệp và tận tâm.</span>
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="d-flex">
+                                        <img src="/static/img/testimonials/testimonials-5.jpg"
+                                             class="testimonial-img flex-shrink-0"
+                                             alt="">
+                                        <div>
+                                            <h3>Nguyễn Đức Ngơ</h3>
+                                            <h4>Doanh Nhân</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        <span>Chất lượng dịch vụ tốt, tôi sẽ tiếp tục sử dụng dịch vụ trong tương lai. Rất khuyến
+                        nghị!</span>
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Thư Viện Ảnh</h2>
+            <p>Các hình ảnh minh họa cho dịch vụ và không gian của chúng tôi, thể hiện sự chuyên nghiệp và tận tâm.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-0">
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-7.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="/static/img/gallery/gallery-8.jpg" class="glightbox" data-gallery="images-gallery">
+                            <img src="/static/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Gallery Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Liên Hệ</h2>
+        </div><!-- End Section Title -->
+
+        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+            <iframe style="border:0; width: 100%; height: 270px;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15682.896257075325!2d106.67908072471621!3d10.67851319495946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317530465869b203%3A0x5b9acb79810d30ee!2zS2h1IGTDom4gY8awIE5oxqFuIMSQ4bupYw!5e0!3m2!1svi!2s!4v1733585505064!5m2!1svi!2s"
+                    frameborder="0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><!-- End Google Maps -->
+
+    </section><!-- /Contact Section -->
+
+</main>
+
+
+{% endblock %}

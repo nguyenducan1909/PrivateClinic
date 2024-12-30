@@ -1,0 +1,93 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+<section class="container">
+    <h1 class="text-center text-danger">Thống kê sử dụng thuốc</h1>
+
+    <div class="row">
+        <div class="col-md-5">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Thuốc</th>
+                    <th>Đơn vị tính</th>
+                    <th>Số lượng</th>
+                    <th>Số lần dùng</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if stats %}
+                {% for s in stats %}
+                <tr>
+                    <td>{{ s['Thuốc'] }}</td> <!-- Tên thuốc -->
+                    <td>{{ s['Đơn vị tính'] }}</td> <!-- Đơn vị tính -->
+                    <td>{{ s['Số lượng'] }}</td> <!-- Số lượng -->
+                    <td>{{ s['Số lần dùng'] }}</td> <!-- Số lần dùng -->
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="4" class="text-center">Không có dữ liệu!</td>
+                </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-7">
+            <form>
+                <div class="form-group">
+                    <input type="month" class="form-control" name="month">
+                </div>
+                <input type="submit" value="Thống kê" class="btn btn-danger m-2">
+            </form>
+            <canvas id="medicineChart"></canvas>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    let labels = [], info = [];
+    let colors = [], borderColors = [];
+    let r, g, b;
+
+    // Thêm dữ liệu từ stats vào labels và info
+    {% for s in stats %}
+        labels.push('{{ s["Thuốc"] }}'); // Tên thuốc
+        info.push({{ s["Số lượng"] }}); // Số lượng thuốc
+
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
+
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
+        borderColors.push(`rgba(${r}, ${g}, ${b}, 1)`);
+    {% endfor %}
+
+    const ctx = document.getElementById('medicineChart');
+    loadChart(ctx, labels, info, 'bar', colors, borderColors);
+
+    function loadChart(ctx, labels, info, type, colors, borderColors) {
+        new Chart(ctx, {
+            type: type,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Thống kê sử dụng thuốc',
+                    data: info,
+                    borderWidth: 1,
+                    borderColor: borderColors,
+                    backgroundColor: colors
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}

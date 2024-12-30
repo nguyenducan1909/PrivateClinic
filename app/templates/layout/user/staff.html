@@ -1,0 +1,177 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-block {% if active_function == 'register_appointment_off' %}btn-primary text-dark{% else %}btn-light{% endif %}"
+                                onclick="location.href='{{ url_for('register_appointment_off') }}'">
+                            Đăng ký khám
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-block {% if active_function == 'create_schedule' %}btn-primary text-dark{% else %}btn-light{% endif %}"
+                                onclick="location.href='{{ url_for('create_schedule') }}'">
+                            Lập danh sách khám
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-block {% if active_function == 'process_payment' %}btn-primary text-dark{% else %}btn-light{% endif %}"
+                                onclick="location.href='{{ url_for('process_payment') }}'">
+                            Thanh toán hóa đơn
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-10 ms-sm-auto px-md-4">
+
+
+            {% if active_function == 'register_appointment_off' %}
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Bảng điều khiển Nhân viên</h1>
+            </div>
+
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h5 class="mb-0">Đăng ký khám</h5>
+                </div>
+
+                <div class="card-body">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="alert alert-dismissible">
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} mt-2">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    <form action="{{ url_for('register_appointment_off') }}" method="POST">
+                        <div class="mb-3">
+                            <label for="appointment_date" class="form-label">Ngày khám</label>
+                            <input type="date" class="form-control" id="appointment_date" name="appointment_date"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="username_patient" class="form-label">Tên đăng nhập</label>
+                            <select class="form-control" id="username_patient" name="username_patient" required>
+                                <option value="">Chọn tên đăng nhập</option>
+                                {% for patient in patients %}
+                                <option value="{{ patient.username }}">{{ patient.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="doctor" class="form-label">Bác sĩ</label>
+                            <select class="form-control" id="doctor" name="doctor" required>
+                                <option value="">Chọn bác sĩ</option>
+                                {% for doctor in doctors %}
+                                <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button type="button" class="btn btn-danger btn-lg hover-shadow" ,
+                                    onclick="window.location.href='{{ url_for('register') }}'">
+                                Tạo tài khoản bệnh nhân
+                            </button>
+
+                            <button type="submit" class="btn btn-success btn-lg hover-shadow">
+                                Đăng ký khám
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% elif active_function == 'create_schedule' %}
+            <div class="container mt-4">
+                <h3>Quản lý lịch hẹn</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Số lượng đăng ký</th>
+                            <th>Chưa xác nhận</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for day in schedule_data %}
+                        <tr>
+                            <td>{{ day.date.strftime('%d/%m/%Y') }}</td>
+                            <td>{{ day.total_count }}/{{ day.max_count }}</td>
+                            <td>{{ day.pending_count }}</td>
+                            <td>
+                                {% if day.is_past %}
+                                <span class="badge bg-secondary">Đã qua</span>
+                                {% else %}
+                                {% if day.total_count >= day.max_count %}
+                                <span class="badge bg-danger">Đã đầy</span>
+                                {% else %}
+                                <span class="badge bg-success">Còn trống</span>
+                                {% endif %}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if not day.is_past and day.pending_count > 0 %}
+                                <form action="{{ url_for('confirm_appointments', date=day.date.strftime('%Y-%m-%d')) }}"
+                                      method="post">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        Xác nhận tất cả
+                                    </button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% elif active_function == 'process_payment' %}
+            <div>
+                đanh làm
+            </div>
+            {% else %}
+            <div class="container mt-5">
+                <!-- Card containing employee information -->
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="mb-0">Thông Tin Nhân Viên</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="{{ session.get('avatar', '/static/default-avatar.png') }}" alt="Avatar"
+                                     class="rounded-circle img-fluid" style="max-width: 150px;">
+                            </div>
+                            <div class="col-md-8">
+                                <h6><strong>Tên nhân viên:</strong> {{ session.get('name', 'N/A') }}</h6>
+                                <p><strong>Số điện thoại:</strong> {{ session.get('phone_number', 'N/A') }}</p>
+                                <p><strong>Vai trò:</strong> {{ session.get('role', 'N/A') }}</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+
+        </main>
+    </div>
+</div>
+{% endblock %}
